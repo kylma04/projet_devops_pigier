@@ -69,6 +69,11 @@
       <Separator prefWidth="200.0" />
       <HBox alignment="CENTER" prefHeight="60.0" prefWidth="450.0" spacing="50.0">
          <children>
+         	<Button prefHeight="40.0" prefWidth="100.0" text="Trier↑↓" onAction="#handleSortButtonClicked">
+         		<font>
+                  <Font size="14.0" />
+             	</font>
+         	</Button>
             <Button mnemonicParsing="false" onAction="#doDelete" prefHeight="40.0" prefWidth="100.0" text="Supprimer">
                <font>
                   <Font size="14.0" />
