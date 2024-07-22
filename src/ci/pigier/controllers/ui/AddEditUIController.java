@@ -76,13 +76,12 @@ public class AddEditUIController extends BaseController implements Initializable
         }
         
         // Actualiser la liste observable data avec les données de la base de données
-        loadNotesFromDatabase(); // Cette méthode doit charger toutes les notes depuis la base de données dans data
+        loadNotesFromDatabase();
         
         // Navigation vers la liste après l'opération
         navigate(event, FXMLPage.LIST.getPage());
         
-        // Actualiser la TableView pour refléter les changements
-//        notesListTable.refresh();
+
     }
     
     private void loadNotesFromDatabase() {

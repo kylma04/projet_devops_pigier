@@ -1,13 +1,11 @@
 package ci.pigier.controllers.ui;
 
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 import java.util.Collections;
 import java.util.Comparator;
 
-import ci.pigier.controllers.ui.ListNotesUIController;
 import ci.pigier.model.Note;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -15,84 +13,7 @@ import javafx.collections.transformation.FilteredList;
 
 public class NoteTests {
 
-    private ListNotesUIController controller;
 
-//    @BeforeEach
-//    public void setUp() {
-//        // Initialisation du contrôleur ou des dépendances nécessaires
-//        controller = new ListNotesUIController();
-//    }
-//
-//    @Test
-//    public void testLoadNotesFromDatabase() {
-//        controller.loadNotesFromDatabase();
-//        // Vérifier si les notes ont été chargées correctement depuis la base de données
-//        assertFalse(controller.getData().isEmpty());
-//    }
-//
-//    @Test
-//    public void testInsertNoteInDatabase() {
-//        // Simuler l'insertion d'une nouvelle note
-//        Note newNote = new Note("Test Title", "Test Description");
-//        controller.getData().add(newNote);
-//        // Vérifier si l'insertion dans la base de données s'est déroulée correctement
-//        assertTrue(controller.getData().contains(newNote));
-//    }
-//
-//    @Test
-//    public void testUpdateNoteInDatabase() {
-//        // Simuler la mise à jour d'une note existante
-//        Note noteToUpdate = controller.getData().get(0); // Supposons que la première note soit mise à jour
-//        String newDescription = "Updated Description";
-//        noteToUpdate.setDescription(newDescription);
-//        controller.updateNoteInDatabase(); // Appel à la méthode de mise à jour
-//        // Vérifier si la description de la note a été mise à jour dans la base de données
-//        assertEquals(newDescription, noteToUpdate.getDescription());
-//    }
-//
-//    @Test
-//    public void testDeleteNoteFromDatabase() {
-//        // Supprimer une note existante de la base de données
-//        Note noteToDelete = controller.getData().get(0); // Supposons que la première note soit supprimée
-//        controller.deleteNoteFromDatabase(noteToDelete.getId()); // Appel à la méthode de suppression
-//        // Vérifier si la note a été correctement supprimée de la base de données
-//        assertFalse(controller.getData().contains(noteToDelete));
-//    }
-//
-//    @Test
-//    public void testSortNotesByTitleAndDescription() {
-//        // Simuler le tri des notes par titre et description
-//        controller.sortNotesByTitleAndDescription(true); // Tri croissant
-//        // Vérifier si les notes sont triées par titre et description dans l'ordre croissant
-//        assertTrue(isSorted(controller.getData(), true));
-//
-//        controller.sortNotesByTitleAndDescription(false); // Tri décroissant
-//        // Vérifier si les notes sont triées par titre et description dans l'ordre décroissant
-//        assertTrue(isSorted(controller.getData(), false));
-//    }
-//
-//    // Méthode utilitaire pour vérifier si la liste de notes est triée par titre et description
-//    private boolean isSorted(ObservableList<Note> notes, boolean ascending) {
-//        boolean sorted = true;
-//        for (int i = 1; i < notes.size(); i++) {
-//            Note prev = notes.get(i - 1);
-//            Note current = notes.get(i);
-//            if (ascending) {
-//                if (prev.getTitle().compareTo(current.getTitle()) > 0 ||
-//                    (prev.getTitle().equals(current.getTitle()) && prev.getDescription().compareTo(current.getDescription()) > 0)) {
-//                    sorted = false;
-//                    break;
-//                }
-//            } else {
-//                if (prev.getTitle().compareTo(current.getTitle()) < 0 ||
-//                    (prev.getTitle().equals(current.getTitle()) && prev.getDescription().compareTo(current.getDescription()) < 0)) {
-//                    sorted = false;
-//                    break;
-//                }
-//            }
-//        }
-//        return sorted;
-//    }
     //Test d'ajout d'une note
     @Test
     public void testAddNote() {

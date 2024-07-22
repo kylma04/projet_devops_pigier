@@ -11,9 +11,6 @@ public class DatabaseConnection {
         String user = "sakila";
         String password = "p_ssW0rd";
     	
-//        String url = "jdbc:mysql://ls-0f19f4268096a452a869b6f8467bc299c51da519.cz6cgwgke8xd.eu-west-3.rds.amazonaws.com:3306";
-//        String user = "dbmasteruser";
-//        String password = "oA*.b.1;U.gW>3YW91GGwft6h5l(|Z12";
 
         Connection connection = null; // Initialisation à null en cas d'erreur
         try {
