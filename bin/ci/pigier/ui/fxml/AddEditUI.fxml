@@ -15,7 +15,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="450.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ci.pigier.controllers.ui.AddEditUIController">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="480.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ci.pigier.controllers.ui.AddEditUIController">
    <children>
       <HBox prefHeight="70.0" prefWidth="450.0" style="-fx-background-color: gray;">
          <children>
@@ -28,21 +28,21 @@
                   </ImageView>
                </children>
             </HBox>
-            <Label alignment="CENTER" prefHeight="70.0" prefWidth="313.0" text="P'Note-Taking App" textAlignment="CENTER" textFill="WHITE">
+            <Label alignment="CENTER" prefHeight="70.0" prefWidth="313.0" text="App De Prise De Note" textAlignment="CENTER" textFill="WHITE">
                <font>
                   <Font name="System Bold Italic" size="30.0" />
                </font>
             </Label>
-            <HBox alignment="CENTER" prefHeight="70.0" prefWidth="59.0">
+            <HBox alignment="CENTER" prefHeight="70.0" prefWidth="80.0">
                <children>
-                  <Button alignment="TOP_CENTER" contentDisplay="TEXT_ONLY" mnemonicParsing="false" onAction="#doBack" text="Notes List" textAlignment="CENTER" wrapText="true" />
+                  <Button alignment="TOP_CENTER" contentDisplay="TEXT_ONLY" mnemonicParsing="false" onAction="#doBack" text="Liste des Notes" textAlignment="CENTER" wrapText="true" />
                </children>
             </HBox>
          </children>
       </HBox>
       <VBox prefHeight="460.0" prefWidth="450.0">
          <children>
-            <Label prefHeight="40.0" prefWidth="170.0" text="* Note Title:">
+            <Label prefHeight="40.0" prefWidth="170.0" text="* Titre de la note:">
                <VBox.margin>
                   <Insets />
                </VBox.margin>
@@ -50,17 +50,17 @@
                   <Font name="System Bold" size="14.0" />
                </font>
             </Label>
-            <TextField fx:id="titleTxtFld" prefHeight="50.0" prefWidth="430.0" promptText="Enter note title...">
+            <TextField fx:id="titleTxtFld" prefHeight="50.0" prefWidth="430.0" promptText="Entrer le titre de la Note...">
                <font>
                   <Font size="14.0" />
                </font>
             </TextField>
-            <Label layoutX="20.0" layoutY="10.0" prefHeight="40.0" prefWidth="170.0" text="* Note Description:">
+            <Label layoutX="20.0" layoutY="10.0" prefHeight="40.0" prefWidth="170.0" text="* Description de la Note:">
                <font>
                   <Font name="System Bold" size="14.0" />
                </font>
             </Label>
-            <TextArea fx:id="descriptionTxtArea" prefHeight="320.0" prefWidth="430.0" promptText="Enter note description..." wrapText="true">
+            <TextArea fx:id="descriptionTxtArea" prefHeight="320.0" prefWidth="430.0" promptText="Entrer la Description de la Note..." wrapText="true">
                <font>
                   <Font size="14.0" />
                </font>
@@ -72,17 +72,17 @@
       <Separator prefWidth="200.0" />
       <HBox alignment="CENTER" prefHeight="70.0" prefWidth="450.0" spacing="40.0">
          <children>
-            <Button mnemonicParsing="false" onAction="#doBack" prefHeight="50.0" prefWidth="100.0" text="Cancel">
+            <Button mnemonicParsing="false" onAction="#doBack" prefHeight="50.0" prefWidth="100.0" text="Abandonner">
                <font>
                   <Font size="14.0" />
                </font>
             </Button>
-            <Button mnemonicParsing="false" onAction="#doClear" prefHeight="50.0" prefWidth="100.0" text="Clear">
+            <Button mnemonicParsing="false" onAction="#doClear" prefHeight="50.0" prefWidth="150.0" text="Effacer le contenu">
                <font>
                   <Font size="14.0" />
                </font>
             </Button>
-            <Button fx:id="saveBtn" mnemonicParsing="false" onAction="#doSave" prefHeight="50.0" prefWidth="100.0" text="Save">
+            <Button fx:id="saveBtn" mnemonicParsing="false" onAction="#doSave" prefHeight="50.0" prefWidth="100.0" text="Enregistrer">
                <font>
                   <Font size="14.0" />
                </font>
