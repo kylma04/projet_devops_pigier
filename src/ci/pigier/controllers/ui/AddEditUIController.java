@@ -36,7 +36,8 @@ public class AddEditUIController extends BaseController implements Initializable
 
     @FXML
     void doClear(ActionEvent event) {
-
+        titleTxtFld.clear();
+        descriptionTxtArea.clear();
     }
 
     @FXML

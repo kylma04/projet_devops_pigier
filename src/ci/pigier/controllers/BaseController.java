@@ -20,24 +20,18 @@ public class BaseController {
 	
 	protected static ObservableList<Note> data =
 			 FXCollections.<Note>observableArrayList(
-			 new Note("Note 1", "Description of note 41"),
-			 new Note("Note 2", "Description of note 32"),
-			 new Note("Note 3", "Description of note 23"),
-			 new Note("Note 4", "Description of note 23"),
-			 new Note("Note 5", "Description of note 23"),
-			 new Note("Note 6", "Description of note 23"),
-			 new Note("Note 7", "Description of note 23"),
-			 new Note("Note 8", "Description of note 23"),
-			 new Note("Note 9", "Description of note 23"),
-			 new Note("Note 10", "Description of note 23"),
-			 new Note("Note 11", "Description of note 23"),
-			 new Note("Note 12", "Description of note 23"),
-			 new Note("Note 13", "Description of note 23"),
-			 new Note("Note 14", "Description of note 23"),
-			 new Note("Note 15", "Description of note 23"),
-			 new Note("Note 16", "Description of note 23"),
-			 new Note("Note 17", "Description of note 23"),
-			 new Note("Note 18", "Description of note 14"));
+			 new Note("Note 1", "Description de la  note 41"),
+			 new Note("Note 2", "Description de la  note 32"),
+			 new Note("Note 3", "Description de la  note 23"),
+			 new Note("Note 4", "Description de la  note 23"),
+			 new Note("Note 5", "Description de la  note 23"),
+			 new Note("Note 6", "Description de la  note 23"),
+			 new Note("Note 7", "Description de la  note 23"),
+			 new Note("Note 8", "Description de la  note 23"),
+			 new Note("Note 9", "Description de la  note 23"),
+			 new Note("Note 10", "Description de la  note 23"),
+			 new Note("Note 11", "Description de la  note 23"),
+			 new Note("Note 12", "Description de la  note 23"));
 			 
 	protected void navigate(Event event, URL fxmlDocName) throws IOException {
 		// Chargement du nouveau document FXML de l'interface utilisateur
