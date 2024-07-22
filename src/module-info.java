@@ -9,4 +9,6 @@ module NoteTakingApp09072024 {
 		exports ci.pigier;
 		exports ci.pigier.controllers.ui;
 		exports ci.pigier.model;
+		requires transitive java.sql;
+		requires org.junit.jupiter.api;
 	}

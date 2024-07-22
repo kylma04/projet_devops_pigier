@@ -4,8 +4,8 @@ import java.io.IOException;
 import java.net.URL;
 
 import ci.pigier.model.Note;
-import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.collections.FXCollections;
 import javafx.event.Event;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -18,20 +18,13 @@ public class BaseController {
 		protected Alert alert;
 	protected static Note editNote = null;
 	
-	protected static ObservableList<Note> data =
-			 FXCollections.<Note>observableArrayList(
-			 new Note("Note 1", "Description de la  note 41"),
-			 new Note("Note 2", "Description de la  note 32"),
-			 new Note("Note 3", "Description de la  note 23"),
-			 new Note("Note 4", "Description de la  note 23"),
-			 new Note("Note 5", "Description de la  note 23"),
-			 new Note("Note 6", "Description de la  note 23"),
-			 new Note("Note 7", "Description de la  note 23"),
-			 new Note("Note 8", "Description de la  note 23"),
-			 new Note("Note 9", "Description de la  note 23"),
-			 new Note("Note 10", "Description de la  note 23"),
-			 new Note("Note 11", "Description de la  note 23"),
-			 new Note("Note 12", "Description de la  note 23"));
+	protected static ObservableList<Note> data = FXCollections.observableArrayList(
+		    new Note(1, "Note 1", "Description de la note 1"),
+		    new Note(2, "Note 2", "Description de la note 2"),
+		    new Note(3, "Note 3", "Description de la note 3"),
+		    new Note(4, "Note 4", "Description de la note 4"),
+		    new Note(5, "Note 5", "Description de la note 5"));
+	
 			 
 	protected void navigate(Event event, URL fxmlDocName) throws IOException {
 		// Chargement du nouveau document FXML de l'interface utilisateur
@@ -47,4 +40,6 @@ public class BaseController {
 		// Affichage de la scène
 		appStage.show();
 	}
+	
+	
 }
