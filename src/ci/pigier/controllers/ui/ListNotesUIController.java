@@ -16,6 +16,7 @@ import java.util.Comparator;
 //import java.util.Objects;
 import java.util.ResourceBundle;
 
+
 import ci.pigier.DatabaseConnection;
 import ci.pigier.controllers.BaseController;
 import ci.pigier.model.Note;
@@ -35,6 +36,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 
+
 public class ListNotesUIController extends BaseController implements Initializable {
 
     @FXML
@@ -53,7 +55,8 @@ public class ListNotesUIController extends BaseController implements Initializab
     private TableColumn<Note, String> titleTc; // Correction du type générique
     
     @FXML
-    private boolean ascendingOrder = true;
+    private boolean ascendingOrderTitle = true;
+    private boolean ascendingOrderDescription = true;
 
     @FXML
     void doDelete(ActionEvent event) {
@@ -91,17 +94,26 @@ public class ListNotesUIController extends BaseController implements Initializab
     }
     
     @FXML
-    void handleSortButtonClicked(ActionEvent event) {
-        if (ascendingOrder) {
-            // Tri par ordre croissant (ignore la casse)
-            Collections.sort(data, Comparator.comparing(Note::getTitle, String.CASE_INSENSITIVE_ORDER));
-        } else {
-            // Tri par ordre décroissant (ignore la casse)
-            Collections.sort(data, Comparator.comparing(Note::getTitle, String.CASE_INSENSITIVE_ORDER).reversed());
+    private void handleSortButtonClicked(String column) {
+        if (column.equals("title")) {
+            if (ascendingOrderTitle) {
+                // Tri par ordre croissant (ignore la casse)
+                Collections.sort(data, Comparator.comparing(Note::getTitle, String.CASE_INSENSITIVE_ORDER));
+            } else {
+                // Tri par ordre décroissant (ignore la casse)
+                Collections.sort(data, Comparator.comparing(Note::getTitle, String.CASE_INSENSITIVE_ORDER).reversed());
+            }
+            ascendingOrderTitle = !ascendingOrderTitle;
+        } else if (column.equals("description")) {
+            if (ascendingOrderDescription) {
+                // Tri par ordre croissant (ignore la casse)
+                Collections.sort(data, Comparator.comparing(Note::getDescription, String.CASE_INSENSITIVE_ORDER));
+            } else {
+                // Tri par ordre décroissant (ignore la casse)
+                Collections.sort(data, Comparator.comparing(Note::getDescription, String.CASE_INSENSITIVE_ORDER).reversed());
+            }
+            ascendingOrderDescription = !ascendingOrderDescription;
         }
-
-        // Inverser l'ordre pour le prochain clic
-        ascendingOrder = !ascendingOrder;
 
         // Rafraîchir la TableView pour refléter les changements
         notesListTable.refresh();
@@ -132,9 +144,23 @@ public class ListNotesUIController extends BaseController implements Initializab
                         || n.getDescription().toLowerCase().contains(lowerCaseFilter);
             });
         });
+        
+        // Ajouter des listeners pour les colonnes
+        titleTc.setSortable(false);
+        descriptionTc.setSortable(false);
+        
+        // Ajouter des EventHandlers pour détecter les clics sur les colonnes
+        addHeaderClickListener(titleTc, "Titre", "title");
+        addHeaderClickListener(descriptionTc, "Description", "description");
 
         // Mettre à jour le compteur initial
         updateNotesCountLabel(filteredData);
+    }
+    
+    private void addHeaderClickListener(TableColumn<Note, String> column, String headerText, String columnName) {
+        Label label = new Label(headerText);
+        column.setGraphic(label);
+        label.setOnMouseClicked(event -> handleSortButtonClicked(columnName));
     }
     
     private void updateNotesCountLabel(FilteredList<Note> filteredData) {
